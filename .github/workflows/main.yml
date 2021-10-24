@@ -34,8 +34,8 @@ jobs:
         with:
           path: node_modules
           key: ${{ env.DEPENDENCIES_CACHE }}-${{ hashFiles('yarn.lock') }}
-      - run: git fetch --no-tags --prune --depth=5 origin master
-      - run: echo "GITHUB_BASE_SHA=$([[ "$GITHUB_REF" == "refs/origin/master" ]] && echo "origin/master~1" || echo "origin/master")" >> $GITHUB_ENV
+      - run: git fetch --no-tags --prune --depth=5 origin main
+      - run: echo "GITHUB_BASE_SHA=$([[ "$GITHUB_REF" == "refs/origin/main" ]] && echo "origin/main~1" || echo "origin/main")" >> $GITHUB_ENV
       - run: node --max-old-space-size=8000 ./node_modules/@nrwl/cli/bin/nx.js format:check --base=$GITHUB_BASE_SHA
 
   distributed-task:
@@ -70,7 +70,7 @@ jobs:
         with:
           path: ${{ env.CYPRESS_CACHE_FOLDER }}
           key: ${{ env.CYPRESS_CACHE }}
-      - run: git fetch --no-tags --prune --depth=5 origin master
+      - run: git fetch --no-tags --prune --depth=5 origin main
       - name: Compute Nx arguments
         if: matrix.target == 'build' || matrix.target == 'e2e'
         run: echo "NX_ARGUMENTS=--prod" >> $GITHUB_ENV
