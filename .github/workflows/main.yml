@@ -1,23 +1,6 @@
-- name: Nrwl Nx
-  # You may pin to the exact commit or the version.
-  # uses: MansaGroup/nrwl-nx-action@0e268742fafb29d3ea3d65d5008f3c47ce687d16
-  uses: MansaGroup/nrwl-nx-action@v2.0.6
+---
+- uses: mansagroup/nrwl-nx-action@v2
   with:
-    # Comma-separated list of targets to execute
-    targets: 
-    # Comma-separated list of projects to use
-    projects: # optional
-    # Run the targets on all projects
-    all: # optional, default is false
-    # Use the Nx' affected subcommand to only process affected projects
-    affected: # optional, default is true
-    # Run the tasks in parallel (can be expensive)
-    parallel: # optional, default is false
-    # Number of tasks to execute in parallel (can be expensive)
-    maxParallel: # optional, default is 3
-    # Optional arguments to append to the Nx command
-    args: # optional, default is 
-    # Enable support for Nx Cloud
-    nxCloud: # optional, default is false
-    # Path to the Nx workspace, needed if not the repository root
-    workingDirectory: # optional
+    targets: lint,test,build
+    all: 'true'
+    nxCloud: 'true'
