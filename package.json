@@ -5,7 +5,9 @@
   "scripts": {
     "start": "nx run-many --target=serve --projects=web,api --parallel --maxParallel=3",
     "build": "nx run-many --target=build --projects=web,api --parallel --maxParallel=3",
-    "test": "nx run-many --target=test --projects=web,api --parallel --maxParallel=100"
+    "test": "nx run-many --target=test --projects=web,api --parallel --maxParallel=100",
+    "lint": "nx run-many --target=lint --projects=web,api --parallel --maxParallel=100",
+    "storybook": "nx run styleguide:storybook"
   },
   "private": true,
   "dependencies": {
