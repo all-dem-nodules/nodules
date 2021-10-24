@@ -1,6 +1,10 @@
 {
   "version": 2,
   "projects": {
-    "api": "apps/api"
+    "api": "apps/api",
+    "styleguide": "libs/styleguide",
+    "styleguide-e2e": "apps/styleguide-e2e",
+    "web": "apps/web",
+    "web-e2e": "apps/web-e2e"
   }
 }

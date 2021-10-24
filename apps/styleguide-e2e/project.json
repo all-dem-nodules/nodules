@@ -1,0 +1,28 @@
+{
+  "root": "apps/styleguide-e2e",
+  "sourceRoot": "apps/styleguide-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/styleguide-e2e/cypress.json",
+        "devServerTarget": "styleguide:storybook"
+      },
+      "configurations": {
+        "ci": {
+          "devServerTarget": "styleguide:storybook:ci"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/styleguide-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["styleguide"]
+}
